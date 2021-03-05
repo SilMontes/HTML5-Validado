@@ -1,0 +1,39 @@
+.card-header {
+  background: #afeeee;
+}
+.container {
+  font-weight: bold;
+}
+.alert {
+  display: none;
+}
+.alert-active {
+  display: block;
+}
+.background-active {
+  background: #ffb6c1;
+}
+.fas {
+  color: yellow;
+}
+.alert1,
+.alert2,
+.alert3,
+.alert4,
+.alert5,
+.alert6,
+.alert7 {
+  padding: 1px;
+  text-align: center;
+  color: red;
+  display: none;
+}
+.alert1-active,
+.alert2-active,
+.alert3-active,
+.alert4-active,
+.alert5-active,
+.alert6-active,
+.alert7-active {
+  display: block;
+}

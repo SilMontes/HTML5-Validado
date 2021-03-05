@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Rigo with Vanilla.js</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <form id="paymentForm">
+            <!--Card Form-->
+            <div class="card">
+                <!--Card Header-->
+                <div class="card-header">
+                    <h2>Payment Form Example</h2>
+                </div>
+                <!--Card body-->
+                <div class="card-body">
+                    <div class="alert alert-danger" id="missingFiels" role="alert">
+                        Some fiels are missing!!
+                    </div>
+                    <!--First Row-->
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label>Card #</label>
+                            <input type="text" name="cardName" class="form-control" placeholder="XXXX-XXXX-XXXX-XXXX" id="cardInput" />
+                            <smal id="error1" class="alert1"><i class="fas fa-exclamation-triangle"></i> Oops! Numbers only. No more than 16 digits. </smal>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>CCV</label>
+                            <input type="text" name="ccvName" class="form-control" placeholder="XXXX" id="ccvInput" />
+                            <smal id="error2" class="alert2"><i class="fas fa-exclamation-triangle"></i> Oops! Numbers only. No more than 4 digits.</smal>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Amount</label>
+                            <input type="text" name="amountName" class="form-control" id="amountInput" />
+                            <smal id="error3" class="alert3"><i class="fas fa-exclamation-triangle"></i> Oops! Numbers only. </smal>
+                        </div>
+                    </div>
+                    <!--Second Row-->
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>First Name</label>
+                            <input type="text" name="firstName" class="form-control" id="firstInput" />
+                            <smal id="error4" class="alert4"><i class="fas fa-exclamation-triangle"></i> Oops! Letters only. </smal>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Last Name</label>
+                            <input type="text" name="lastName" class="form-control" id="lastInput" />
+                             <smal id="error5" class="alert5"><i class="fas fa-exclamation-triangle"></i> Oops! Letters only. </smal>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>City</label>
+                            <input type="text" name="cityName" class="form-control" id="cityInput" />
+                            <smal id="error6" class="alert6"><i class="fas fa-exclamation-triangle"></i> Oops! Letters only. </smal>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>State</label>
+                            <select class="form-control" id="stateIput">
+                                <option selected>Pick a state</option>
+                                <option value="1">Texas</option>
+                                <option value="2">Arizona</option>
+                                <option value="3">California</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Postal code</label>
+                            <input type="text" name="postalCode" class="form-control" id="postalInput" />
+                            <smal id="error7" class="alert7"><i class="fas fa-exclamation-triangle"></i> Oops! Numbers only. </smal>
+                        </div>
+                    </div>
+                    <!--Third Row-->
+                    <div class="form-row ">
+                        <div class=" form-group col-6 ">
+                            <label">We accept:</label>
+                                <div class="input-group  mb-2">
+                                    <div class="input-group-text bg-secondary" id="cardSelection">
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input class="form-check-input" type="radio" id="inlineRadio1"
+                                                value="option1" name="inlineRadioOptions" />
+                                            <label class="form-check-label" for="inlineRadio1"><i
+                                                    class="fab fa-cc-mastercard" aria-hidden="true"></i></label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input class="form-check-input" type="radio" id="inlineRadio2"
+                                                value="option2" name="inlineRadioOptions" />
+                                            <label class="form-check-label" for="inlineRadio1"><i class="fab fa-cc-visa"
+                                                    aria-hidden="true"></i></label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input class="form-check-input" type="radio" id="inlineRadio3"
+                                                value="option3" name="inlineRadioOptions" />
+                                            <label class="form-check-label" for="inlineRadio1"><i
+                                                    class="fab fa-cc-diners-club" aria-hidden="true"></i></label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input class="form-check-input" type="radio" id="inlineRadio4"
+                                                value="option4" name="inlineRadioOptions" />
+                                            <label class="form-check-label" for="inlineRadio1"><i class="far fa-credit-card" aria-hidden="true"></i></i></label>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class=" form-group col-md-6">
+                            <label for="validation-text-area">Message</label>
+                            <textarea class="form-control"></textarea>
+                            <small class="form-text text-muted">Add any notes here</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-right">
+                    <button type="reset" id="limpiarForm" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <script src="./app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
